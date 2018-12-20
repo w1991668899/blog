@@ -1,3 +1,3 @@
 # blog
 
-[Go defer分析](http://github.com)
+[Go defer分析](https://www.jianshu.com/p/f74fc6166df4)
