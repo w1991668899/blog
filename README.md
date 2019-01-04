@@ -20,7 +20,7 @@
 
 ## linux
 ### 内存管理
-[内存管理-程序是如何运行的]（https://www.jianshu.com/p/f42ad2f9af73）
+[内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)
 
 
 ## docker
