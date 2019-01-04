@@ -24,6 +24,8 @@
 
 [内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)
 
+[内存管理-分页机制](https://www.jianshu.com/p/f9e362e64ef9)
+
 
 ## docker
 [docker运行mysql8.0实践](https://www.jianshu.com/p/cb3f94b263da)
