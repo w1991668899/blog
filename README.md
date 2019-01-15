@@ -28,7 +28,9 @@
 
 
 ## docker
-[docker运行mysql8.0实践](https://www.jianshu.com/p/cb3f94b263da)
+[docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)
+
+[docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
 
 ## mysql
 
