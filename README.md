@@ -5,7 +5,7 @@
 | Project | time | Article |
 |:-------:|:-------:|:------|
 |unicode|2017-03-03| [Go unicode字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/src/go/unicode.md)
-|alice&array|2017-04-025| [关于切片与数组](https://github.com/w1991668899/blog/blob/master/src/go/unicode.md)
+|alice&array|2017-04-025| [关于切片与数组](https://github.com/w1991668899/blog/blob/master/src/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
 |defer|2017-05-27|[Go defer分析](https://www.jianshu.com/p/f74fc6166df4)
 |标准库|2017-06-12|[Go 标准库 IO](https://www.jianshu.com/p/abc396787a32)
 |内存|2017-06-12|[Go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
