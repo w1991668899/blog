@@ -105,6 +105,44 @@ type rune = int32
 根据rune类型的声明可知，它实际上就是int32类型的一个别名类型。也就是说，一个rune类型的值会由四个字节宽度的空间来存储。它的存储空间总是能存下一个UTF-8编码值。
 <br><br>一个rune类型的值在底层其实就是一个UTF-8编码值。前者是便于人类理解的外部展现，后者是便于计算机理解的内在表达。
 
+**eg1.**
+```
+func main()  {
+	str := "一起学习 Go"
+	fmt.Printf("the string: %q\n", str)
+	fmt.Printf("rune(char): %q\n", []rune(str))
+	fmt.Printf("rune(hex): %x\n", []rune(str))
+	fmt.Printf("byte(hex): % x\n", []byte(str))
+}
+
+//the string: "一起学习 Go"     
+//rune(char): ['一' '起' '学' '习' ' ' 'G' 'o']
+//rune(hex): [4e00 8d77 5b66 4e60 20 47 6f]
+//byte(hex): e4 b8 80 e8 b5 b7 e5 ad a6 e4 b9 a0 20 47 6f
+
+```
+
+**eg2.**
+
+```
+func main()  {
+	str := "一起学习 Go"
+
+	for k, v := range str{
+		fmt.Printf("%d: %q [% x]\n", k, v, []byte(string(v)))
+	}
+}
+
+//0: '一' [e4 b8 80]
+//3: '起' [e8 b5 b7]
+//6: '学' [e5 ad a6]
+//9: '习' [e4 b9 a0]
+//12: ' ' [20]
+//13: 'G' [47]
+//14: 'o' [6f]
+
+```
+
 
 
 
