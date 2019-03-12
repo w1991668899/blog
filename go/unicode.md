@@ -1,5 +1,5 @@
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/src/image/go/unicode.png'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/unicode.png'>
 </p>
 计算机是以二进制的形式来存储数据的，它只认识 0 和 1 两个数字，我们在屏幕上看到的文字，在存储之前都被转换成了二进制（0和1序列），在显示时也要根据二进制找到对应的字符。
 <br><br>可想而知，特定的文字必然对应着固定的二进制，否则在转换时将发生混乱。那么，怎样将文字与二进制对应起来呢？这就需要有一套规范，计算机公司和软件开发者都必须遵守，这样的一套规范就称为字符集（Character Set）或者字符编码（Character Encoding）。
