@@ -13,6 +13,8 @@ const (
 	IPv4len = 4         
 	IPv6len = 16
 )
+
+// 很容易看出这表示ip地址的长度（bytes），其中ipv4长度是4，ipv6地址长度是16
 ```
 
 # 常见变量
@@ -31,6 +33,11 @@ const (
 <br><br>伴随CIDR出现的是一个**广播地址**，10.100.122.255 。如果发送这个地址，所有 10.100.122 网络里面的机器都可以收到。另一个是**子网掩码** 255.255.255.0
 <br><br>**将子网掩码和IP地址按位计算AND，即可得到网络号**
 
+## 公有IP地址与私有IP地址
+
+如果你搭建一个网站使所有人都能访问那么就需要一个公有IP，公有IP是有组织统一分配的。
+192.168.0.xxx 是最常用的私有IP，家里的WIFI路由器一般就是 192.168.0.1,而 192.168.0.255 就是广播地址。一旦发送这个地址整个 192.168.0网络中的机器都能收到。
+
 ```
 // An IP is a single IP address, a slice of bytes.
 // Functions in this package accept either 4-byte (IPv4)
@@ -45,6 +52,8 @@ type IP []byte
 
 // IP表示一个简单的IP地址，它是一个byte类型的slice，能够接受4字节（IPV4）或者16字节（IPV6）输入。
 // 注意，IP地址是IPv4地址还是IPv6地址是语义上的特性，而不取决于切片的长度：16字节的切片也可以是IPv4地址。
+// 如果是IPv4会自定义前面12个字节可查找源码
+var v4InV6Prefix = []byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff}
 ```
 
 ## 常用ipv4地址
@@ -71,5 +80,116 @@ var (
 	IPv6linklocalallnodes      = IP{0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01}
 	IPv6linklocalallrouters    = IP{0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x02}
 )
+```
+
+# 自定义类型
+
+
+
+```
+// An IP is a single IP address, a slice of bytes.
+// Functions in this package accept either 4-byte (IPv4)
+// or 16-byte (IPv6) slices as input.
+//
+// Note that in this documentation, referring to an
+// IP address as an IPv4 address or an IPv6 address
+// is a semantic property of the address, not just the
+// length of the byte slice: a 16-byte slice can still
+// be an IPv4 address.
+type IP []byte
+
+// An IP mask is an IP address.
+type IPMask []byte
+
+// An IPNet represents an IP network.
+type IPNet struct { 
+	IP   IP     // network number  网路地址
+	Mask IPMask // network mask    子网掩码
+}
+```
+
+```
+// IPv4 returns the IP address (in 16-byte form) of the
+// IPv4 address a.b.c.d.
+func IPv4(a, b, c, d byte) IP {
+	p := make(IP, IPv6len)
+	copy(p, v4InV6Prefix)
+	p[12] = a
+	p[13] = b
+	p[14] = c
+	p[15] = d
+	return p
+}
+// 获取ipv4地址
+
+var v4InV6Prefix = []byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff}
+
+// IPv4Mask returns the IP mask (in 4-byte form) of the
+// IPv4 mask a.b.c.d.
+func IPv4Mask(a, b, c, d byte) IPMask {
+	p := make(IPMask, IPv4len)
+	p[0] = a
+	p[1] = b
+	p[2] = c
+	p[3] = d
+	return p
+}
+// 返回ip掩码,其中ip掩码形式是ipv4掩码(4 byte模式)a.b.c.d
+
+// CIDRMask returns an IPMask consisting of `ones' 1 bits
+// followed by 0s up to a total length of `bits' bits.
+// For a mask of this form, CIDRMask is the inverse of IPMask.Size.
+func CIDRMask(ones, bits int) IPMask {
+	if bits != 8*IPv4len && bits != 8*IPv6len {
+		return nil
+	}
+	if ones < 0 || ones > bits {
+		return nil
+	}
+	l := bits / 8
+	m := make(IPMask, l)
+	n := uint(ones)
+	for i := 0; i < l; i++ {
+		if n >= 8 {
+			m[i] = 0xff
+			n -= 8
+			continue
+		}
+		m[i] = ^byte(0xff >> n)
+		n = 0
+	}
+	return m
+}
+返回一个CIDRMask,其中CIDRMask总bit数目是bits,前ones位是1,其余位是0.
+```
+
+看代码
+```
+package main
+
+import (
+	"fmt"
+	"net"
+)
+
+func main() {
+	fmt.Println(net.IPv4(8, 8, 9, 20).String())
+	fmt.Println(net.IPv4Mask(255, 255, 255, 0))
+	fmt.Println(net.IPv4Mask(255, 255, 255, 0).Size())
+	fmt.Println(net.IPv4Mask(255, 255, 255, 0).String())
+	fmt.Println(net.CIDRMask(31, 32))
+	fmt.Println(net.CIDRMask(31, 32).Size())
+	fmt.Println(net.CIDRMask(64, 128).String())
+}
+
+//返回值
+8.8.9.20
+ffffff00
+24 32
+ffffff00
+fffffffe
+31 32
+ffffffffffffffff0000000000000000
+
 ```
 
