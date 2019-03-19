@@ -1,0 +1,6 @@
+# channel
+
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/多进程与多线程.jpg'>
+</p>
+
