@@ -17,8 +17,6 @@ const (
 // 很容易看出这表示ip地址的长度（bytes），其中ipv4长度是4，ipv6地址长度是16
 ```
 
-# 常见变量
-
 ## IP知识讲解 [wiki](https://zh.wikipedia.org/wiki/IPv4)
  
 最初，一个IP地址被分成两部分：网络识别码在地址的高位字节中，主机识别码在剩下的部分中。
@@ -55,6 +53,8 @@ type IP []byte
 // 如果是IPv4会自定义前面12个字节可查找源码
 var v4InV6Prefix = []byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0xff, 0xff}
 ```
+
+# 常见变量
 
 ## 常用ipv4地址
 
