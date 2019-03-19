@@ -1,3 +1,9 @@
+# 关于 defer
+
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/slice_array.jpeg'>
+</p>
+
 #什么是defer
 A "defer" statement invokes a function whose execution is deferred to the moment the surrounding function returns, either because the surrounding function executed a [return statement](https://golang.org/ref/spec#Return_statements), reached the end of its [function body](https://golang.org/ref/spec#Function_declarations), or because the corresponding goroutine is [panicking](https://golang.org/ref/spec#Handling_panics).
 
