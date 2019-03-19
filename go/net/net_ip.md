@@ -193,6 +193,7 @@ ffffffffffffffff0000000000000000
 
 ```
 
+# 关于 IP 类型
 ```
 // IsUnspecified reports whether ip is an unspecified address, either
 // the IPv4 address "0.0.0.0" or the IPv6 address "::".
@@ -459,3 +460,125 @@ func (ip IP) Equal(x IP) bool {
 
 ```
 
+# 关于 IPMask 类型
+
+```
+// Size returns the number of leading ones and total bits in the mask.
+// If the mask is not in the canonical form--ones followed by zeros--then
+// Size returns 0, 0.
+func (m IPMask) Size() (ones, bits int) {
+	ones, bits = simpleMaskLength(m), len(m)*8
+	if ones == -1 {
+		return 0, 0
+	}
+	return
+}
+// 返回掩码中的前导数和总位数。如果掩码不是规范形式 - 其后是零，则Size返回0,0
+
+// String returns the hexadecimal form of m, with no punctuation.
+func (m IPMask) String() string {
+	if len(m) == 0 {
+		return "<nil>"
+	}
+	return hexString(m)
+}
+// 返回m的十六进制形式，没有标点符号
+```
+
+# 关于 IPNet 类型
+
+```
+// Contains reports whether the network includes ip.
+func (n *IPNet) Contains(ip IP) bool {
+	nn, m := networkNumberAndMask(n)
+	if x := ip.To4(); x != nil {
+		ip = x
+	}
+	l := len(ip)
+	if l != len(nn) {
+		return false
+	}
+	for i := 0; i < l; i++ {
+		if nn[i]&m[i] != ip[i]&m[i] {
+			return false
+		}
+	}
+	return true
+}
+// 包含报告网络是否包含IP
+
+// Network returns the address's network name, "ip+net".
+func (n *IPNet) Network() string { return "ip+net" }
+// 返回地址的网络名称，“ip + net”。
+
+// String returns the CIDR notation of n like "192.0.2.1/24"
+// or "2001:db8::/48" as defined in RFC 4632 and RFC 4291.
+// If the mask is not in the canonical form, it returns the
+// string which consists of an IP address, followed by a slash
+// character and a mask expressed as hexadecimal form with no
+// punctuation like "198.51.100.1/c000ff00".
+func (n *IPNet) String() string {
+	nn, m := networkNumberAndMask(n)
+	if nn == nil || m == nil {
+		return "<nil>"
+	}
+	l := simpleMaskLength(m)
+	if l == -1 {
+		return nn.String() + "/" + m.String()
+	}
+	return nn.String() + "/" + uitoa(uint(l))
+}
+// 如RFC 4632和RFC 4291中定义的那样，字符串返回n的CIDR表示法，如“192.0.2.1/24”或“2001：db8 :: / 48”。如果掩码不是规范形式，则返回包含的IP地址，后跟一个斜杠字符和一个以十六进制形式表示的掩码，没有像“198.51.100.1/c000ff00”这样的标点符号。
+```
+
+# 函数
+```
+// ParseIP parses s as an IP address, returning the result.
+// The string s can be in dotted decimal ("192.0.2.1")
+// or IPv6 ("2001:db8::68") form.
+// If s is not a valid textual representation of an IP address,
+// ParseIP returns nil.
+func ParseIP(s string) IP {
+	for i := 0; i < len(s); i++ {
+		switch s[i] {
+		case '.':
+			return parseIPv4(s)
+		case ':':
+			return parseIPv6(s)
+		}
+	}
+	return nil
+}
+// 将s解析为IP地址，并返回结果。字符串s可以采用点分十进制（“192.0.2.1”）或IPv6（“2001：db8 :: 68”）形式。如果s不是IP地址的有效文本表示，则ParseIP返回nil。
+
+// ParseCIDR parses s as a CIDR notation IP address and prefix length,
+// like "192.0.2.0/24" or "2001:db8::/32", as defined in
+// RFC 4632 and RFC 4291.
+//
+// It returns the IP address and the network implied by the IP and
+// prefix length.
+// For example, ParseCIDR("192.0.2.1/24") returns the IP address
+// 192.0.2.1 and the network 192.0.2.0/24.
+func ParseCIDR(s string) (IP, *IPNet, error) {
+	i := bytealg.IndexByteString(s, '/')
+	if i < 0 {
+		return nil, nil, &ParseError{Type: "CIDR address", Text: s}
+	}
+	addr, mask := s[:i], s[i+1:]
+	iplen := IPv4len
+	ip := parseIPv4(addr)
+	if ip == nil {
+		iplen = IPv6len
+		ip = parseIPv6(addr)
+	}
+	n, i, ok := dtoi(mask)
+	if ip == nil || !ok || i != len(mask) || n < 0 || n > 8*iplen {
+		return nil, nil, &ParseError{Type: "CIDR address", Text: s}
+	}
+	m := CIDRMask(n, 8*iplen)
+	return ip, &IPNet{IP: ip.Mask(m), Mask: m}, nil
+}
+// 将s解析为CIDR表示法IP地址和前缀长度，如RFC 4632和RFC 4291中定义的“192.0.2.0/24”或“2001：db8 :: / 32”。
+// 它返回由IP和前缀长度暗示的IP地址和网络。例如，ParseCIDR（“192.0.2.1/24”）返回IP地址192.0.2.1和网络192.0.2.0/24。
+
+```
