@@ -8,7 +8,7 @@
 |unicode| [Go unicode字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)|
 |数据类型| [关于slice array string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)|
 |defer|[Go defer分析](https://github.com/w1991668899/blog/blob/master/go/defer.md)|
-|标准库|[Go 标准库 IO](https://www.jianshu.com/p/abc396787a32) <br><br>[net包源码解析 ip.go 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)|
+|标准库|[Go 标准库 IO](https://github.com/w1991668899/blog/blob/master/go/io/io.md) <br><br>[net包源码解析 ip.go 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)|
 |内存|[Go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)|
 
 

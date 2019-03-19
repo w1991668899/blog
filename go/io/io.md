@@ -1,7 +1,7 @@
 # IO 包源码解析
 
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/go/net_01.jpeg'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/io.jpeg'>
 </p>
 
 &emsp;一般的，计算机程序是：输入 (Input) 经过算法处理产生输出 (Output)。各种语言一般都会提供IO库供开发者使用。Go语言也不例外。
