@@ -1,7 +1,7 @@
 # 关于 defer
 
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/go/slice_array.jpeg'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/defer.jpeg'>
 </p>
 
 #什么是defer
