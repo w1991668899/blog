@@ -6,7 +6,7 @@
 
 **参考:**
 
--  [mysql文档](https://dev.mysql.com/doc/refman/8.0/en/)
+-   [mysql文档](https://dev.mysql.com/doc/refman/8.0/en/)
 - 《高性能mysql》
 - 《Mysql技术内幕》
 
