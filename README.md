@@ -1,7 +1,7 @@
 # blog
 本人工作与学习中的一点总结日记
 
-# 🐳 Go
+## 🐳 Go
 
 | Article |
 |:-------|
@@ -14,30 +14,14 @@
 |[内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)|
 |[多进程与多线程](https://github.com/w1991668899/blog/blob/master/go/concurrent/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B.md)|
 |[channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)|
-
-
-----------------------------
-
-## ⚙ rust
-| Article |
-|:-------|
-
---------------------------------------
-## 数据结构与算法
-| Article |
-|:-------|
+|[内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)|
+|[内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)<br>[内存管理-分页机制](https://www.jianshu.com/p/f9e362e64ef9)|
 |[复杂度分析](https://www.jianshu.com/p/444c65ebb416)
 
 --------------------------------------------------
 ## linux
 | Article |
 |:-------|
-
-### 内存管理
-| Article |
-|:-------|
-|内存管理| [内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)<br>[内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)<br>[内存管理-分页机制](https://www.jianshu.com/p/f9e362e64ef9)
-
 
 ---------------------------------------------------
 ## docker
