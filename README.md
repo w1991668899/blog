@@ -46,7 +46,7 @@
 ## mysql
 | Project | Article |
 |:-------:|:------|
-|基础架构|[mysql基础架构](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84)|
+|基础架构|[mysql基础架构](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84.md)|
 
 ## redis
 | Project | Article |
