@@ -1,7 +1,7 @@
 # linux 性能优化基本思路
 
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/mysql/mysql%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84.jpg'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/linux/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.jpeg'>
 </p>
 
 平时都在linux或mac下进行开发，最近看了一些关于linux性能优化分析的知识，这里做些总结。
