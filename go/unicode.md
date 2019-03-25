@@ -97,7 +97,7 @@ Windows 内核、.NET Framework、Cocoa、Java String 内部采用的都是 UTF-
 Unicode 字符集可以使用窄字符的方式存储，也可以使用宽字符的方式存储；GB2312、GBK、Shift-JIS 等国家编码一般都使用窄字符的方式存储；ASCII 只有一个字节，无所谓窄字符和宽字符。
 
 ## Go语言中的Unicode与utf-8
-**Go一个string类型的值在底层是怎样被表达的？**
+**Go中string类型的值在底层的表达方式**
 <br>在底层，一个string类型的值是由一系列相对应的Unicode代码点的UTF-8编码值来表达
 <br>**解析:**
 <br>在Go语言中，一个string类型的值既可以被拆分为一个包含多个字符的序列，也可以被拆分成一个包含多个字节的序列。前者可以由一个rune为元素的切片来表示，而后者可以由一byte为元素类型的切片代表。
