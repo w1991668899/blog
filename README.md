@@ -20,6 +20,7 @@
 |[复杂度分析](https://www.jianshu.com/p/444c65ebb416)|
 |[单链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/single_link.md)|
 |[双链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/double_link.md)|
+|[栈]()|
 
 --------------------------------------------------
 ## linux
