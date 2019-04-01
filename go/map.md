@@ -9,15 +9,15 @@
 type hmap struct {
 	// Note: the format of the hmap is also encoded in cmd/compile/internal/gc/reflect.go.
 	// Make sure this stays in sync with the compiler's definition.
-	count     int // # live cells == size of map.  Must be first (used by len() builtin)   // 元素个数
-	flags     uint8
-	B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)       // 扩容常量相关字段
-	noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details   // bucket溢出个数
-	hash0     uint32 // hash seed               
+	count     int // # live cells == size of map.  Must be first (used by len() builtin) 元素个数
+	flags     uint8    // flags
+	B         uint8  // log_2 of # of buckets (can hold up to loadFactor * 2^B items)  2^B个bucket
+	noverflow uint16 // approximate number of overflow buckets; see incrnoverflow for details  溢出bucket个数
+	hash0     uint32 // hash seed   hash种子             
 
-	buckets    unsafe.Pointer // array of 2^B Buckets. may be nil if count==0.      // buckets的数组指针
-	oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing  // 结构扩容的时候用于复制的buckets数组
-	nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated) //  搬迁进度（已经搬迁的buckets数量）
+	buckets    unsafe.Pointer // array of 2^B Buckets. may be nil if count==0.  buckets的数组指针
+	oldbuckets unsafe.Pointer // previous bucket array of half the size, non-nil only when growing  结构扩容的时候用于复制的buckets数组指针
+	nevacuate  uintptr        // progress counter for evacuation (buckets less than this have been evacuated) 搬迁进度（已经搬迁的buckets数量）
 
 	extra *mapextra // optional fields
 }
@@ -32,7 +32,7 @@ type mapextra struct {
 	// overflow contains overflow buckets for hmap.buckets.
 	// oldoverflow contains overflow buckets for hmap.oldbuckets.
 	// The indirection allows to store a pointer to the slice in hiter.
-	overflow    *[]*bmap
+	overflow    *[]*bmap   // 溢出bucket的地址
 	oldoverflow *[]*bmap
 
 	// nextOverflow holds a pointer to a free overflow bucket.
@@ -44,7 +44,7 @@ type bmap struct {
 	// tophash generally contains the top byte of the hash value
 	// for each key in this bucket. If tophash[0] < minTopHash,
 	// tophash[0] is a bucket evacuation state instead.
-	tophash [bucketCnt]uint8
+	tophash [bucketCnt]uint8     // 存储哈希值的高8位
 	// Followed by bucketCnt keys and then bucketCnt values.
 	// NOTE: packing all the keys together and then all the values together makes the
 	// code a bit more complicated than alternating key/value/key/value/... but it allows
@@ -52,4 +52,8 @@ type bmap struct {
 	// Followed by an overflow pointer.
 }
 ```
+# map结构图
+
+![map结构示意图]()
+
 
