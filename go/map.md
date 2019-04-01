@@ -3,6 +3,77 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/go/map.jpg'>
 </p>
 
+# map中的key
+```
+package main
+
+import "fmt"
+
+func main()  {
+	var badMap2 = map[interface{}]int{
+		0:1000,
+		"1":1000,
+		[2]int{10}:1000,
+	}
+	fmt.Println(badMap2)
+}
+
+// 输出:map[[10 0]:1000 1:1000 0:1000]
+```
+
+- map中的key不能是 slice、function、map, 这些类型只能跟nil做`==`判断<br>
+
+**chan类型可以作为key但是后面的值会覆盖前面的**
+```
+package main
+
+import "fmt"
+
+func main()  {
+	ch:= make(chan string, 2)
+	ma := make(map[chan string]int)
+
+	ch<- "study"
+	ma[ch] = 100
+	ch<- "go"
+	ma[ch] = 999
+
+	fmt.Println(ma)
+}
+
+// 输出: map[0xc00008a0c0:999]
+
+```
+
+**uintptr也可以作为key**
+```
+package main
+
+import (
+	"fmt"
+	"unsafe"
+)
+
+func main()  {
+	ma := make(map[uintptr]string)
+
+	a := 100
+	pt := uintptr(unsafe.Pointer(&a))
+
+	ma[100] = "study"
+	ma[200] = "go"
+	fmt.Println(ma)
+
+	ma[pt] = "together"
+
+	fmt.Println(ma)
+}
+
+// 输出:
+// map[100:study 200:go]
+// map[100:study 200:go 824634257240:together]
+```
+
 # 底层结构 (runtime包map.go文件中)
 ```
 // A header for a Go map.
