@@ -54,6 +54,6 @@ type bmap struct {
 ```
 # map结构图
 
-![map结构示意图]()
+![map结构示意图](https://github.com/w1991668899/blog/blob/master/image/go/map%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 
