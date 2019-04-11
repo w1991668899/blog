@@ -1,11 +1,8 @@
-# blog
+# Blog
 
-本人工作与学习中的一点总结日记
-
-<p align='center' width='200'>
+<p align='center'>
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
-
 
 [Go文章收集](https://github.com/w1991668899/blog/blob/master/article.md) &nbsp;&nbsp;  [Go项目收集](https://github.com/w1991668899/blog/blob/master/project.md)
 
