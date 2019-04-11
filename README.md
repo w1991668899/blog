@@ -4,7 +4,7 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
 
-[Go文章收集](https://github.com/w1991668899/blog/blob/master/article.md) &nbsp;&nbsp;  [Go项目收集](https://github.com/w1991668899/blog/blob/master/project.md)
+[✒️ Go文章](https://github.com/w1991668899/blog/blob/master/article.md) &nbsp;&nbsp;  [🐰 Go项目](https://github.com/w1991668899/blog/blob/master/project.md)
 
 ## 🐳 Go
 
