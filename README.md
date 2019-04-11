@@ -1,4 +1,4 @@
-# Blog
+# 🦕 Blog
 
 <p align='center'>
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
@@ -30,26 +30,26 @@
 - [Gin 最佳实践](https://github.com/w1991668899/gin_example/blob/master/README.md)<br>
 
 --------------------------------------------------
-## linux
+## 💻 linux
 
 - [linux性能优化基本思路](https://github.com/w1991668899/blog/blob/master/linux/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.md)
 
 ---------------------------------------------------
-## docker
+## 🐘 docker
 
 - [docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)<br>
 - [docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)<br>
 
-## mysql
+## 🥔 mysql
 
 - [mysql基础架构](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84.md)<br>
 - [mysql日志系统](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F.md)<br>
 - [事物隔离](https://github.com/w1991668899/blog/blob/master/mysql/%E4%BA%8B%E7%89%A9%E9%9A%94%E7%A6%BB.md)<br>
 
-## redis
+## 🌃 redis
 
 
-## nginx
+## 🍅 nginx
 
 
 
