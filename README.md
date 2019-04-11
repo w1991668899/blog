@@ -1,10 +1,13 @@
 # blog
+
 本人工作与学习中的一点总结日记
+
+[Go文章收集](https://github.com/w1991668899/blog/blob/master/article.md)   [Go项目收集](https://github.com/w1991668899/blog/blob/master/project.md)
 
 ## 🐳 Go
 
 | Article |
-|:-------|
+|:-------:|
 |[Unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)|
 |[关于 Slice、Array、String](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)|
 |[关于 Map](https://github.com/w1991668899/blog/blob/master/go/map.md)|
@@ -29,29 +32,29 @@
 --------------------------------------------------
 ## linux
 | Article |
-|:-------|
+|:-------:|
 |[linux性能优化基本思路](https://github.com/w1991668899/blog/blob/master/linux/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.md)|
 
 ---------------------------------------------------
 ## docker
 | Article |
-|:-------|
+|:-------:|
 |[docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)<br>[docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
 
 ## mysql
 | Article |
-|:------|
+|:------:|
 |[mysql基础架构](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84.md)|
 |[mysql日志系统](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F.md)|
 |[事物隔离](https://github.com/w1991668899/blog/blob/master/mysql/%E4%BA%8B%E7%89%A9%E9%9A%94%E7%A6%BB.md)|
 
 ## redis
 | Article |
-|:-------|
+|:-------:|
 
 ## nginx
 | Article |
-|:-------|
+|:-------:|
 
 
 
