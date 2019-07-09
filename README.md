@@ -2,8 +2,7 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
 
-<p align='center'> <h1>Blog</h1>
-</p>
+#  <p align='center'> Blog </p>
 
 # 🦕 🥚 🔥  
 
