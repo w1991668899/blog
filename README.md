@@ -2,7 +2,7 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
 
-# 🦕 🥚 🔥 **_ <center>Blog</center> _** 
+ 🦕 🥚 🔥  # <center>Blog</center>
 
 ## 🐳 [Go](https://golang.org/)
 
