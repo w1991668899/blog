@@ -39,7 +39,7 @@
 - [现代IM系统中消息推送和存储架构的实现](https://yq.aliyun.com/articles/253242)
 
 ## 数据结构与算法
-
+- [数学基础](https://github.com/w1991668899/blog/blob/master/structuresandalgorithms/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.md)
 
 ## 💻 linux   
 
