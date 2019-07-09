@@ -28,7 +28,7 @@
 - [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 - [Gin 最佳实践](https://github.com/w1991668899/gin_example/blob/master/README.md)
 
-**_收藏文章_**
+**_📚收藏文章_**
 - [深度解密Go语言之Slice](https://mp.weixin.qq.com/s/wwUFmdLTJ2xuaN8OJrUtAw)
 - [sync.RWMutex - 解决并发读写问题](https://mp.weixin.qq.com/s/kQEHt37Tr7x5CIfre9-Jbw)
 - [大规模Go项目几乎必踏的几个坑 - Dragonboat为例](https://zhuanlan.zhihu.com/p/53284649?utm_source=wechat_session&utm_medium=social&utm_oi=35700095320064&wechatShare=1&s_r=0&from=timeline&isappinstalled=0)
@@ -38,7 +38,7 @@
 - [Go 语言 Channel 实现原理精要](https://studygolang.com/articles/19415)
 - [现代IM系统中消息推送和存储架构的实现](https://yq.aliyun.com/articles/253242)
 
-## 🐦 linux   
+## 💻 linux   
 
 - [Brendan Gregg](http://www.brendangregg.com/Perf/linux_perf_tools_full.png)
 - []()
