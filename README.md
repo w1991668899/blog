@@ -4,9 +4,7 @@
 
 #  <p align='center'> Blog </p>
 
-# 🦕 🥚 🔥  
-
-## 🐳 [Go](https://golang.org/)
+## 🐿[Go](https://golang.org/)
 
 - [Unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [关于 Slice、Array、String](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
@@ -40,16 +38,6 @@
 - [Go 语言 Channel 实现原理精要](https://studygolang.com/articles/19415)
 - [现代IM系统中消息推送和存储架构的实现](https://yq.aliyun.com/articles/253242)
 
-**_收藏blog_**
-- [MySQL高性能优化系列](https://www.cnblogs.com/huchong/tag/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97/)
-
-**_收藏项目_**
-- [Kubernetes](https://github.com/kubernetes/kubernetes)
-- [Docker](https://docs.docker-cn.com/)
-- [Etcd](https://github.com/etcd-io/etcd)
-- [Caddy](https://caddyserver.com/)
-
-
 ## 🐦 linux   
 
 - [Brendan Gregg](http://www.brendangregg.com/Perf/linux_perf_tools_full.png)
@@ -72,6 +60,16 @@
 
 
 ## 🍅 [Nginx](https://nginx.org/en/docs/)
+
+
+**_收藏blog_**
+- [MySQL高性能优化系列](https://www.cnblogs.com/huchong/tag/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97/)
+
+**_收藏项目_**
+- [Kubernetes](https://github.com/kubernetes/kubernetes)
+- [Docker](https://docs.docker-cn.com/)
+- [Etcd](https://github.com/etcd-io/etcd)
+- [Caddy](https://caddyserver.com/)
 
 
 
