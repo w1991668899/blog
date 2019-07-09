@@ -2,7 +2,7 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
 
-<p align='center' style="font-size:20px"> Blog </p>
+<p align='center' style="font-size:40px"> Blog </p>
 
 # 🦕 🥚 🔥  
 
