@@ -10,7 +10,8 @@
 - [关于 Slice、Array、String](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
 - [关于 Map](https://github.com/w1991668899/blog/blob/master/go/map.md)
 - [defer 分析](https://github.com/w1991668899/blog/blob/master/go/defer.md)
-- [Reflect、Interface]()
+- [Reflect、Interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
+- [channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
 - [位运算](https://github.com/w1991668899/blog/blob/master/go/%E4%BD%8D%E8%BF%90%E7%AE%97.md)
 - [io 包源码解析 `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
 - [net 包源码解析 `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
@@ -21,11 +22,6 @@
 - [内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)
 - [内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)
 - [内存管理-分页机制](https://www.jianshu.com/p/f9e362e64ef9)
-- [复杂度分析](https://www.jianshu.com/p/444c65ebb416)
-- [单链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/single_link.md)
-- [双链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/double_link.md)
-- [栈](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/stack.md)
-- [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 - [Gin 最佳实践](https://github.com/w1991668899/gin_example/blob/master/README.md)
 
 **_📚收藏文章_**
@@ -40,15 +36,24 @@
 
 ## 数据结构与算法
 - [数学基础](https://github.com/w1991668899/blog/blob/master/structuresandalgorithms/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.md)
+- [复杂度分析](https://www.jianshu.com/p/444c65ebb416)
+- [单链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/single_link.md)
+- [双链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/double_link.md)
+- [栈](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/stack.md)
+- [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 
 ## 💻 linux   
 
 - [Brendan Gregg](http://www.brendangregg.com/Perf/linux_perf_tools_full.png)
-- []()
 - [linux性能优化基本思路](https://github.com/w1991668899/blog/blob/master/linux/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.md)
+- [linux 信号](https://github.com/w1991668899/blog/blob/master/linux/%E4%BF%A1%E5%8F%B7.md)
+- [linux 进程]()
+- [linux cpu]()
+- [linux 内存]()
+- [linux IO]()
 
 
-## 🐘 [Docker](https://docs.docker-cn.com/) [K8s](https://kubernetes.io/zh/docs/concepts/overview/what-is-kubernetes/)
+## 🐘 [Dockes](https://docs.docker-cn.com/) [K8s](https://kubernetes.io/zh/docs/concepts/overview/what-is-kubernetes/)
 
 - [docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)
 - [docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
