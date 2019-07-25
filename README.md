@@ -4,6 +4,7 @@
 
 #  <p align='center'> Blog </p>
 
+- [go-micro 微服务框架集成](https://github.com/w1991668899/go-micro)
 - [Unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [关于 Slice、Array、String](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
 - [关于 Map](https://github.com/w1991668899/blog/blob/master/go/map.md)
