@@ -24,9 +24,9 @@ func main()  {
 	//		for mailbox == 1 {
 	//			sendCond.Wait()
 	//		}
-	//		log.Printf("sender [%d]: the mailbox is empty.", i)
+	//		tool_log.Printf("sender [%d]: the mailbox is empty.", i)
 	//		mailbox = 1
-	//		log.Printf("sender [%d]: the letter has been sent.", i)
+	//		tool_log.Printf("sender [%d]: the letter has been sent.", i)
 	//		lock.Unlock()
 	//		recvCond.Signal()
 	//	}
@@ -41,9 +41,9 @@ func main()  {
 	//		for mailbox == 0 {
 	//			recvCond.Wait()
 	//		}
-	//		log.Printf("receiver [%d]: the mailbox is full.", j)
+	//		tool_log.Printf("receiver [%d]: the mailbox is full.", j)
 	//		mailbox = 0
-	//		log.Printf("receiver [%d]: the letter has been received.", j)
+	//		tool_log.Printf("receiver [%d]: the letter has been received.", j)
 	//		lock.RUnlock()
 	//		sendCond.Signal()
 	//	}
