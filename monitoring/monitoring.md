@@ -1,6 +1,6 @@
 # Prometheus监控系统
 
-## 安装Prometheus Server
+## 安装Prometheus Server     （在被抓取信息的服务器上安装）
 
 执行下面命令安装prometheus:
 
@@ -31,7 +31,7 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/22222.png'>
 </p>
 
-## 安装客户端metrics接口 （在被抓去信息的服务器上安装）
+## 安装node-exporter （在被抓取信息的服务器上安装）
 1. 使用如下命令步骤安装metrics
 `docker run -d --name=node-exporter --restart=always -p 9100:9100 prom/node-exporter`
 
@@ -55,28 +55,48 @@ global:
  # 这里表示抓取对象的配置
  scrape_configs:
    #这个配置是表示在这个配置内的时间序例，每一条都会自动添加上这个{job_name:"prometheus"}的标签  - job_name: 'prometheus'
-   - job_name: 'prometheus'
-     scrape_interval: 5s # 重写了全局抓取间隔时间，由15秒重写成5秒
-     static_configs:
-       - targets: ['127.0.0.1:9090']       # prometheus服务器本机地址
+   #  - job_name: 'prometheus'
+   # scrape_interval: 5s # 重写了全局抓取间隔时间，由15秒重写成5秒
+   # static_configs:
+   #   - targets: ['127.0.0.1:9090']       # 此处写部署prometheus服务器地址
 
    - job_name: 'linux_106.15.95.51'       # 被收集信息的服务器地址
      static_configs:
-       - targets: ['106.15.95.51:9100']
+       - targets: ['106.15.95.51:9090']
 ```
 3. 执行 `docker cp ./prometheus.yml 37cb8259141d:/etc/prometheus/prometheus.yml` 命令替换配置文件
 
 注：
 - ./prometheus.yml 指刚才创建的服务器地址
 - 37cb8259141d 指容器 prometheus 容器的ID可以使用， `docker container ls` 命令查看
+- /etc/prometheus/prometheus.yml  指容器内部文件地址
 
 4. 使用 `docker container restart 37cb8259141d` 重启容器
 
 5. 访问 `http://127.0.0.1:9090/targets` 接口，如出现如下图所示表示成功：
 
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/333343543.png'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/555552343.png'>
 </p>
+
+## 安装Grafana可视化工具
+
+1.  `docker run -d -p 3000:3000 --restart=always --name grafana grafana/grafana`
+
+访问 127.0.0.1:3000 
+
+默认账号： admin
+默认密码： admin
+
+2. 登录后如下：
+
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/555552343.png'>
+</p>
+
+## 添加
+
+
 
 
 
