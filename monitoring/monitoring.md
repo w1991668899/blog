@@ -146,6 +146,12 @@ docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/999343433.png'>
 </p>
 
+## 结果如下图
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/999343433.png'>
+</p>
+
+
 
 
 
