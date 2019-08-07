@@ -102,13 +102,13 @@ scrape_configs:
 
 4. 使用 `docker container restart 37cb8259141d` 重启容器
 
-5. 访问 `http://127.0.0.1:9090/targets` 接口，如出现如下图所示表示成功：
+5. 访问 `106.15.95.51:9090/targets` 接口，如出现如下图所示表示成功：
 
 <p align='center'>
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/555552343.png'>
 </p>
 
-## 安装pushgateway
+## 安装pushgateway  （在被抓取信息的服务器上安装）
 ```
 docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 ```
@@ -117,7 +117,7 @@ docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/44444234324.png'>
 </p>
 
-## 安装Grafana可视化工具
+## 安装Grafana可视化工具   (在监控服务器上)
 
 1.  `docker run -d -p 3000:3000 --restart=always --name grafana grafana/grafana`
 
