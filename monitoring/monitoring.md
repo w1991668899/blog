@@ -94,7 +94,11 @@ global:
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/555552343.png'>
 </p>
 
-## 添加
+## 添加source 如下图
+
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/777esfdfd.png'>
+</p>
 
 
 
