@@ -117,7 +117,7 @@ docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/44444234324.png'>
 </p>
 
-## 安装Grafana可视化工具   (在监控服务器上)
+## 安装Grafana可视化工具   (在监控服务器上安装)
 
 1.  `docker run -d -p 3000:3000 --restart=always --name grafana grafana/grafana`
 
