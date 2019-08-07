@@ -21,6 +21,14 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
 37cb8259141d        prom/prometheus         "/bin/prometheus --w…"   6 minutes ago       Up 6 minutes        0.0.0.0:9090->9090/tcp              prometheus
 ```
 
-访问： 127.0.0.1:9090 看到如下界面表示安装成功
+访问： 127.0.0.1:9090 看到如下界面表示安装成功:
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/343242342.png'>
+</p>
+
+访问：127.0.0.1:9090/metrics 看到如下界面表示prometheus在抓取自己的 `/metrics`接口新信息：
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/343242342.png'>
+</p>
 
 
