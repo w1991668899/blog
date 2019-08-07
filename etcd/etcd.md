@@ -1,8 +1,3 @@
-# go-micro 主要功能
+# ETCD分布式锁
 
-- 服务发现
-- 负载平衡
-- 消息编码
-- 请求/响应
-- 异步通信
-- 可插拔接口
+- 以/lock/mylock 为前缀创建全局唯一key, client1_key= "/lock/mylock/"
