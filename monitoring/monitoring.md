@@ -103,8 +103,19 @@ global:
 
 5. 访问 `http://127.0.0.1:9090/targets` 接口，如出现如下图所示五个接口表示成功：
 <p align='center'>
-<img src=''>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/333343543.png'>
 </p>
+
+## 安装pushgateway （在被抓去信息的服务器上安装）
+
+使用 `docker run -d -p 9091:9091 --restart=always --name pushgateway prom/pushgateway`
+
+访问 106.15.95.51:9091 初心如下界面表示运行正常：
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/333343543.png'>
+</p>
+
+
 
 
 
