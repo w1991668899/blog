@@ -2,6 +2,8 @@
 
 ## 安装Prometheus Server     （在被抓取信息的服务器上安装）
 
+[官网下载地址](https://prometheus.io/download/)
+
 执行下面命令安装prometheus:
 
 ```
@@ -53,6 +55,8 @@ go build -o random main.go
 
 
 ## 安装node-exporter （在被抓取信息的服务器上安装）
+[官网](https://github.com/prometheus/node_exporter)
+
 1. 使用如下命令步骤安装
 ```
 docker run -d --name=node-exporter --restart=always -p 9100:9100 prom/node-exporter
@@ -119,7 +123,18 @@ docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 
 ## 安装Grafana可视化工具   (在监控服务器上安装)
 
-1.  `docker run -d -p 3000:3000 --restart=always --name grafana grafana/grafana`
+1.  使用docker安装
+```
+docker run -d \
+  -p 3000:3000 \
+  -e INFLUXDB_HOST=localhost \
+  -e INFLUXDB_PORT=8086 \
+  -e INFLUXDB_NAME=cadvisor \
+  -e INFLUXDB_USER=root -e INFLUXDB_PASS=root \
+  --link influxdb:influxdb \
+  --name grafana \
+grafana/grafana
+```
 
 访问 127.0.0.1:3000 
 
