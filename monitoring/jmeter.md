@@ -1,5 +1,13 @@
 # 分布式压测与监控系统搭建流程
 
+## 概述
+介绍使用 JMeter+InfluxDB+Grafana 搭建分布式可视化压测实时监控系统
+
+## 架构简介
+<p align='center'>
+<img src='https://jmeter.apache.org/images/screenshots/distributed-jmeter.svg'>
+</p>
+
 ## 分布式环境与压力服务器要求
 
 - 控制机 可在本机电脑或独立服务器, 负责测试脚本发布
