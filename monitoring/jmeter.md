@@ -1,32 +1,78 @@
 # 分布式压测与监控系统搭建流程
 
 ## 概述
+
 介绍使用 JMeter+InfluxDB+Grafana 搭建分布式可视化压测实时监控系统
 
-## 架构简介
+## 分布式一主多从
+
 <p align='center'>
 <img src='https://jmeter.apache.org/images/screenshots/distributed-jmeter.svg'>
 </p>
 
+## 压测流程
+
+<p align='center'>
+<img src='https://jmeter.apache.org/images/screenshots/distributed-names.svg'>
+</p>
+
+
 ## 分布式环境与压力服务器要求
 
-- 控制机 可在本机电脑或独立服务器, 负责测试脚本发布
-- 压力机 linux服务器， 压力机的带宽要比服务器带宽高，负责实际的压力测试。执行完成后，压力机会把结果回传给控制机，控制机会收集所有压力机的信息并汇总
-- Jmeter Apache组织开发的基于Java的压力测试工具
-- InfluxDB 时序数据库， 负责压测数据的存储。控制机和压力机之间的时间需要保证同步
+### 硬件
+
+- 控制机： 独立linux服务器, 负责测试脚本发布与测试数据汇总
+- 压力机： linux服务器， 压力机的带宽要比服务器带宽高，负责实际的压力测试。执行完成后，压力机会把结果回传给控制机，控制机会收集所有压力机的信息并汇总
+
+
+### 软件
+
+- 关闭系统上的防火墙或打开正确的端口
+- 所有压力机IP都在同一个子网上
+- 确保在所有系统上使用相同版本的JMeter和Java，混合版本无法正常工作
+
+
+- InfluxDB 
 - cAdvisor Google用来监测单节点的资源信息的监控工具
 - Grafana 数据的可视化展示， 需要部署在独立的服务器
 
-## 部署jmeter  [官网地址](https://jmeter.apache.org/download_jmeter.cgi)
+## 部署jmeter服务端/客户端  [官网地址](https://jmeter.apache.org/download_jmeter.cgi)
+
+### jmeter服务端部署
+
+```
+docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server_001 --net=host  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=1098 -Dserver_port=1098 --server
+```
+
+`192.168.3.14` 为当前压力机IP
+
 多台压力机重复上面操作
 
-## 部署 influxDB
-使用docker安装:
+### jmeter客户端部署
+
+```
+docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1098,192.168.3.15:1098 --logfile result.jtl
+```
+
+`--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
+`--testfile test.jmx`  指定测试样本
+
+## 部署 influxDB 官网[https://www.influxdata.com/]
+
+时序数据库，负责压测数据的存储，控制机和压力机之间的时间需要保证同步
+
+### 部署
 
 ```
 docker run -d --restart=always -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --name influxdb tutum/influxdb
 ```
-http://106.15.95.51:8083/  访问可视化界面, 换成自己的IP
+
+部署完成后访问 `http://106.15.95.51:8083`  访问可视化界面, 换成自己的IP, 如下图所示：
+
+<p align='center'>
+<img src=''>
+</p>
+
 
 分别执行以下命令：
 
@@ -82,9 +128,7 @@ grafana/grafana
 docker run --detach --publish 11098:11098 --restart=always -d --name=jmeter_server_001  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=11098 -Dserver_port=11098 --server
 ```
 
-```
-docker run --detach --restart=always -d --name=jmeter_client  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:11098,192.168.3.14:21098 --logfile result.jtl
-```
+
 
 
 
