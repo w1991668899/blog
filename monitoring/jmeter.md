@@ -2,7 +2,7 @@
 
 ## 概述
 
-介绍使用 JMeter+InfluxDB+Grafana 搭建分布式可视化压测实时监控系统
+介绍使用 JMeter+InfluxDB+Cadvisor+Grafana 搭建分布式可视化压测实时监控系统
 
 ## 分布式一主多从
 
