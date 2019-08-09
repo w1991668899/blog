@@ -52,8 +52,8 @@ docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server
 docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1098,192.168.3.15:1098 --logfile result.jtl
 ```
 
-`--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
-`--testfile test.jmx`  指定测试样本
+- `--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
+- `--testfile test.jmx`  指定测试样本
 
 ## 部署 influxDB 官网[https://www.influxdata.com/]
 
