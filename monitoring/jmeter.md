@@ -32,8 +32,6 @@
 - 确保在所有系统上使用相同版本的JMeter和Java，混合版本无法正常工作
 
 
-- InfluxDB 
-- cAdvisor Google用来监测单节点的资源信息的监控工具
 - Grafana 数据的可视化展示， 需要部署在独立的服务器
 
 ## 部署jmeter服务端/客户端  [官网地址](https://jmeter.apache.org/download_jmeter.cgi)
@@ -70,11 +68,10 @@ docker run -d --restart=always -p 8083:8083 -p 8086:8086 --expose 8090 --expose 
 部署完成后访问 `http://106.15.95.51:8083`  访问可视化界面, 换成自己的IP, 如下图所示：
 
 <p align='center'>
-<img src=''>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/bbbb2332.png'>
 </p>
 
-
-分别执行以下命令：
+命令行操作：
 
 ```
 CREATE DATABASE "cadvisor"
@@ -85,14 +82,12 @@ CREATE USER "cadvisor" WITH PASSWORD 'cadvisor'
 grant all privileges on "cadvisor" to "cadvisor"
 ```
 
-访问（换成自己的IP）： `http://106.15.95.51:8080/containers/`  出现如下图所示：
-<p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/aa213213.png'>
-</p>
+## cadvisor  [官网](https://github.com/google/cadvisor)
 
-## 安装cadvisor  [官网](https://github.com/google/cadvisor)
+Google用来监测单节点的资源信息的监控工具
 
-使用docker 安装
+### 部署
+
 ```
 docker run \
   --volume=/:/rootfs:ro \
@@ -100,13 +95,24 @@ docker run \
   --volume=/sys:/sys:ro \
   --volume=/var/lib/docker/:/var/lib/docker:ro \
   -p 8080:8080 \
-  --detach=true --link influxsrv:influxdb \
+  --detach=true --link influxdb:influxdb \
   --name=cadvisor \
   google/cadvisor:latest \
   -storage_driver=influxdb \
   -storage_driver_db=cadvisor \
   -storage_driver_host=influxdb:8086
 ```
+
+- `-p 8080:8080` 指定默认端口
+- `--link infludb:influxdb` 指定数据类型
+- `--name=cadvisor` 指定数据库名称, 用来收集数据
+
+
+访问（换成自己的IP）： `http://106.15.95.51:8080/containers/`  出现如下图所示：
+
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/aa213213.png'>
+</p>
 
 ## 安装 granfana  
 
