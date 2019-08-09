@@ -36,7 +36,7 @@
 
 ## 部署jmeter服务端/客户端  [官网地址](https://jmeter.apache.org/download_jmeter.cgi)
 
-### jmeter服务端部署
+### jmeter 服务端部署
 
 ```
 docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server_001 --net=host  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=1098 -Dserver_port=1098 --server
@@ -46,7 +46,7 @@ docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server
 
 多台压力机重复上面操作
 
-### jmeter客户端部署
+### jmeter 客户端部署
 
 ```
 docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1098,192.168.3.15:1098 --logfile result.jtl
@@ -55,7 +55,7 @@ docker run --detach --restart=always -d --name=jmeter_client --net=host  --volum
 - `--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
 - `--testfile test.jmx`  指定测试样本
 
-## 部署 influxDB [官网](https://www.influxdata.com/)
+## influxDB  [官网](https://www.influxdata.com/)
 
 时序数据库，负责压测数据的存储，控制机和压力机之间的时间需要保证同步
 
@@ -114,7 +114,9 @@ docker run \
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/aa213213.png'>
 </p>
 
-## 安装 granfana  
+## granfana  
+
+### 部署
 
 ```
 docker run -d \
@@ -124,15 +126,13 @@ docker run -d \
   -e INFLUXDB_NAME=cadvisor \
   -e INFLUXDB_USER=root -e INFLUXDB_PASS=root \
   --link influxdb:influxdb \
-  --name grafana \
+  --name grafana --restart=always -d \
 grafana/grafana
 ```
 
-## 分布式环境配置
+- `-e INFLUXDB_NAME=cadvisor` 指定数据库,收集granfana所在服务器信息
 
-```
-docker run --detach --publish 11098:11098 --restart=always -d --name=jmeter_server_001  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=11098 -Dserver_port=11098 --server
-```
+## 分布式环境配置
 
 
 
