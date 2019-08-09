@@ -1,14 +1,13 @@
 # Prometheus监控系统
 
-## 安装Prometheus Server     （在被抓取信息的服务器上安装）
+## 安装Prometheus Server  [官网](https://prometheus.io/download/)
 
-[官网下载地址](https://prometheus.io/download/)
-
-执行下面命令安装prometheus:
+### 部署 prometheus:
 
 ```
 docker run --name=prometheus --restart=always  -d -p 9090:9090 prom/prometheus  --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
 ```
+
 说明：
 - 启动时加上 `--web.enable-lifecycle` 启用远程热加载配置文件
 - 调用指令是：curl -X POST 127.0.0.1:9090/-/reload
@@ -33,7 +32,10 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/22222.png'>
 </p>
 
-## 安装golang客户端提供metrics （在被抓取信息的服务器上安装）
+## metrics客户端
+
+### 部署
+
 ````
 mkdir -p /home/wt/promethues/client/golang/src
 cd !$
@@ -54,8 +56,9 @@ go build -o random main.go
 ```
 
 
-## 安装node-exporter （在被抓取信息的服务器上安装）
-[官网](https://github.com/prometheus/node_exporter)
+## node-exporter [官网](https://github.com/prometheus/node_exporter)
+
+### 部署流程
 
 1. 使用如下命令步骤安装
 ```
@@ -112,18 +115,26 @@ scrape_configs:
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/555552343.png'>
 </p>
 
-## 安装pushgateway  （在被抓取信息的服务器上安装）
+## pushgateway
+
+### 部署
+
 ```
 docker run -d -p 9091:9091 --restart=always  --name pushgateway prom/pushgateway
 ```
-访问：http://106.15.95.51:9091 看到如下界面即可
+
+访问：http://106.15.95.51:9091 看到如下界面即可:
+
 <p align='center'>
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/44444234324.png'>
 </p>
 
-## 安装Grafana可视化工具   (在监控服务器上安装)
+## Grafana可视化工具  
 
-1.  使用docker安装
+### 部署流程
+
+1.  docker安装
+
 ```
 docker run -d \
   -p 3000:3000 \
@@ -162,6 +173,7 @@ grafana/grafana
 </p>
 
 ## 结果如下图
+
 <p align='center'>
 <img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/12345dfsf.png'>
 </p>
