@@ -32,6 +32,9 @@ grant all privileges on "cadvisor" to "cadvisor"
 ```
 
 访问（换成自己的IP）： `http://106.15.95.51:8080/containers/`  出现如下图所示：
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/monitoring/aa213213.png'>
+</p>
 
 ## 安装cadvisor  [官网](https://github.com/google/cadvisor)
 
@@ -51,7 +54,7 @@ docker run \
   -storage_driver_host=influxdb:8086
 ```
 
-## 安装 granfana  (在独立服务器部署)
+## 安装 granfana  
 
 ```
 docker run -d \
@@ -66,6 +69,14 @@ grafana/grafana
 ```
 
 ## 分布式环境配置
+
+```
+docker run --detach --publish 11098:11098 --restart=always -d --name=jmeter_server_001  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=11098 -Dserver_port=11098 --server
+```
+
+```
+docker run --detach --restart=always -d --name=jmeter_client  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:11098,192.168.3.14:21098 --logfile result.jtl
+```
 
 
 
