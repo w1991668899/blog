@@ -55,7 +55,7 @@ docker run --detach --restart=always -d --name=jmeter_client --net=host  --volum
 - `--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
 - `--testfile test.jmx`  指定测试样本
 
-## 部署 influxDB 官网[https://www.influxdata.com/]
+## 部署 influxDB [官网](https://www.influxdata.com/)
 
 时序数据库，负责压测数据的存储，控制机和压力机之间的时间需要保证同步
 
