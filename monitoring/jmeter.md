@@ -49,11 +49,12 @@ docker run --detach --publish 1099:1099 -d --name=jmeter_server --net=host  egai
 ### jmeter 客户端部署
 
 ```
-docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1099,192.168.3.15:1099 --logfile result.jtl
+docker run --detach --rm --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.1.1,192.168.1.1 --logfile result.jtl --forceDeleteResultFile --reportatendofloadtests --reportoutputfolder report -Jjmeter.reportgenerator.overall_granularity=10000
 ```
 
-- `--remotestart 192.168.3.14:1099,192.168.3.15:1099`   指定远程压力机
+- `--remotestart 192.168.3.14,192.168.3.15`   指定远程压力机
 - `--testfile test.jmx`  指定测试样本
+- `-Jjmeter.reportgenerator.overall_granularity=10000` 生成报告粒度控制
 
 ## influxDB  [官网](https://www.influxdata.com/)
 
