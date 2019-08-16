@@ -39,7 +39,7 @@
 ### jmeter 服务端部署
 
 ```
-docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server_001 --net=host  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=1098 -Dserver_port=1098 --server
+docker run --detach --publish 1099:1099 -d --name=jmeter_server --net=host  egaillardon/jmeter -Jserver.rmi.ssl.disable=true -Djava.rmi.server.hostname=192.168.3.14 -Jserver.rmi.localport=1099 -Dserver_port=1099 --server
 ```
 
 `192.168.3.14` 为当前压力机IP
@@ -49,10 +49,10 @@ docker run --detach --publish 1098:1098 --restart=always -d --name=jmeter_server
 ### jmeter 客户端部署
 
 ```
-docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1098,192.168.3.15:1098 --logfile result.jtl
+docker run --detach --restart=always -d --name=jmeter_client --net=host  --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.3.14:1099,192.168.3.15:1099 --logfile result.jtl
 ```
 
-- `--remotestart 192.168.3.14:1098,192.168.3.15:1098`   指定远程压力机
+- `--remotestart 192.168.3.14:1099,192.168.3.15:1099`   指定远程压力机
 - `--testfile test.jmx`  指定测试样本
 
 ## influxDB  [官网](https://www.influxdata.com/)
