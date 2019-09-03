@@ -49,7 +49,7 @@ docker run --detach --publish 1099:1099 -d --name=jmeter_server --net=host  egai
 ### jmeter 客户端部署
 
 ```
-docker run --detach --rm --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.1.1,192.168.1.1 --logfile result.jtl --forceDeleteResultFile --reportatendofloadtests --reportoutputfolder report -Jjmeter.reportgenerator.overall_granularity=10000
+docker run --detach --net=host --rm --volume `pwd`:/jmeter egaillardon/jmeter -Jserver.rmi.ssl.disable=true --nongui --testfile test.jmx --remotestart 192.168.1.1,192.168.1.1 --logfile result.jtl --forceDeleteResultFile --reportatendofloadtests --reportoutputfolder report -Jjmeter.reportgenerator.overall_granularity=10000
 ```
 
 - `--remotestart 192.168.3.14,192.168.3.15`   指定远程压力机
