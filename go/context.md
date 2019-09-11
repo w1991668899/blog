@@ -59,10 +59,11 @@ import (
 	"time"
 )
 
-// A Context carries a deadline, a cancellation signal, and other values across
+// A Context carries a *deadline*, a cancellation signal, and other values across
 // API boundaries.
 //
 // Context's methods may be called by multiple goroutines simultaneously.
+// 方法可以被并发调用
 type Context interface {
 	// Deadline returns the time when work done on behalf of this context
 	// should be canceled. Deadline returns ok==false when no deadline is
