@@ -59,7 +59,7 @@ import (
 	"time"
 )
 
-// A Context carries a *deadline*, a cancellation signal, and other values across
+// A Context carries a **deadline**, a cancellation signal, and other values across
 // API boundaries.
 //
 // Context's methods may be called by multiple goroutines simultaneously.
