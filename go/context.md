@@ -2,7 +2,7 @@
 
 ## 介绍
 
-Context与WaitGroup都可用于go的并发控制，但context对于派生的goroutine有更强的控制力(如主动取消goroutine, 超时自动退出)，也可以控制多级goroutine
+Context与WaitGroup都可用于go的并发控制，但Context对于派生的Goroutine有更强的控制力(如主动取消Goroutine, 超时自动退出)，也可以控制多级Goroutine
 当取消一个Context所有从这个Context派生出来的Context都会被取消
 
 ## 源码
@@ -108,3 +108,5 @@ type Context interface {
 }
 
 ```
+
+- 接口中的四个方法都是幂等的，连续调用多次同一个方法得到的结果是相同的
