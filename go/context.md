@@ -3,7 +3,7 @@
 ## 介绍
 
 <p align='center'>
-<img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/go/context.jpg'>
 </p>
 
 Context与WaitGroup都可用于go的并发控制，但Context对于派生的Goroutine有更强的控制力(如主动取消Goroutine, 超时自动退出)，也可以控制多级Goroutine
