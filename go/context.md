@@ -138,6 +138,7 @@ type stringer interface {
 ```
 
 ### 结构体
+
 ```
 // An emptyCtx is never canceled, has no values, and has no deadline. It is not
 // struct{}, since vars of this type must have distinct addresses.
@@ -170,3 +171,47 @@ func (e *emptyCtx) String() string {
 }
 
 ```
+
+#### `emptyCtx` 初始化
+
+```
+var (
+	background = new(emptyCtx)
+	todo       = new(emptyCtx)
+)
+
+// Background returns a non-nil, empty Context. It is never canceled, has no
+// values, and has no deadline. It is typically used by the main function,
+// initialization, and tests, and as the top-level Context for incoming
+// requests.
+func Background() Context {
+	return background
+}
+
+// TODO returns a non-nil, empty Context. Code should use context.TODO when
+// it's unclear which Context to use or it is not yet available (because the
+// surrounding function has not yet been extended to accept a Context
+// parameter).
+func TODO() Context {
+	return todo
+}
+```
+
+- `Background()` 通常用在main函数中，作为context根节点
+- `TODO()` 一般用在不知道传递什么context，而手头有没有其他context可用的时候,用其占个位置
+
+#### 
+
+```bash
+// A cancelCtx can be canceled. When canceled, it also cancels any children
+// that implement canceler.
+type cancelCtx struct {
+	Context
+
+	mu       sync.Mutex            // protects following fields
+	done     chan struct{}         // created lazily, closed by first cancel call
+	children map[canceler]struct{} // set to nil by the first cancel call
+	err      error                 // set to non-nil by the first cancel call
+}
+```
+
