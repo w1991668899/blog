@@ -2,6 +2,10 @@
 
 ## 介绍
 
+<p align='center'>
+<img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
+</p>
+
 Context与WaitGroup都可用于go的并发控制，但Context对于派生的Goroutine有更强的控制力(如主动取消Goroutine, 超时自动退出)，也可以控制多级Goroutine
 当取消一个Context所有从这个Context派生出来的Context都会被取消
 
@@ -19,7 +23,7 @@ type Context interface {
 	// Deadline returns the time when work done on behalf of this context
 	// should be canceled. Deadline returns ok==false when no deadline is
 	// set. Successive calls to Deadline return the same results.
-	Deadline() (deadline time.Time, ok bool)
+	Deadline() (deadline time.Time, ok bool)        // 返回被取消时间
 
 	// Done returns a channel that's closed when work done on behalf of this
 	// context should be canceled. Done may return nil if this context can
@@ -50,15 +54,15 @@ type Context interface {
 	//
 	// See https://blog.golang.org/pipelines for more examples of how to use
 	// a Done channel for cancellation.
-	Done() <-chan struct{}
+	Done() <-chan struct{}         // 返回一个channel, 会在当前工作完成或者上下文被取消后关闭
 
 	// If Done is not yet closed, Err returns nil.
 	// If Done is closed, Err returns a non-nil error explaining why:
 	// Canceled if the context was canceled
 	// or DeadlineExceeded if the context's deadline passed.
 	// After Err returns a non-nil error, successive calls to Err return the same error.
-	Err() error
-
+	Err() error     // 返回context结束的原因，只会在Done(）返回的channel被关闭时才会返回非空值
+                    // 如果context被取消返回cancel错误，如果context超时会返回DeadlineExceeded错误
 	// Value returns the value associated with this context for key, or nil
 	// if no value is associated with key. Successive calls to Value with
 	// the same key returns the same result.
@@ -108,5 +112,16 @@ type Context interface {
 }
 
 ```
-
 - 接口中的四个方法都是幂等的，连续调用多次同一个方法得到的结果是相同的
+- Cancel一个节点会连带Cancel其所有子节点
+- Context value 是一个节点
+- Value 查找是回溯树的形式，从下到上
+
+```
+// A canceler is a context type that can be canceled directly. The
+// implementations are *cancelCtx and *timerCtx.
+type canceler interface {
+	cancel(removeFromParent bool, err error)
+	Done() <-chan struct{}
+}
+```
