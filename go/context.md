@@ -125,3 +125,48 @@ type canceler interface {
 	Done() <-chan struct{}
 }
 ```
+- `*cancelCtx` 与 `*timerCtx` 的结构体指针实现了这个接口
+- 此接口并没有定义cancel()方法, 表明实现了该接口的类型只能定义`取消`消息条件，决定如何以及何时推出由被调用者执行
+- `取消` 某个函数时和它关联的函数也会被取消，因此`Done()`方法返回一个只读channel,所有相关函数监听次channel。一旦关闭，通过
+channel的"广播机制"所有监听者都可以收到
+
+
+```
+type stringer interface {
+	String() string
+}
+```
+
+### 结构体
+```
+// An emptyCtx is never canceled, has no values, and has no deadline. It is not
+// struct{}, since vars of this type must have distinct addresses.
+type emptyCtx int
+
+func (*emptyCtx) Deadline() (deadline time.Time, ok bool) {
+	return
+}
+
+func (*emptyCtx) Done() <-chan struct{} {
+	return nil
+}
+
+func (*emptyCtx) Err() error {
+	return nil
+}
+
+func (*emptyCtx) Value(key interface{}) interface{} {
+	return nil
+}
+
+func (e *emptyCtx) String() string {
+	switch e {
+	case background:
+		return "context.Background"
+	case todo:
+		return "context.TODO"
+	}
+	return "unknown empty Context"
+}
+
+```
