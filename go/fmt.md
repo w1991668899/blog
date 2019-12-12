@@ -34,16 +34,20 @@ func main() {
 %t	true或false 
 //如下示例
 func main() {
-	fmt.Printf("%t\n", true)  //true
+	fmt.Printf("%t\n", true)  //true  注: 必须为Bool类型才能使用 %t 占位符
+	fmt.Printf("%t\n", "string")        //%!t(string=string)   错误
+	fmt.Printf("%t\n", 100)     //%!t(int=100)  错误
+	fmt.Printf("%t\n", 0)   //%!t(int=0)  错误
 }
 ```
 整数
 ============================================
 ```
 %b  表示二进制
-%c  该值对应的unicode吗值
+%c  相应的Unicode代码点表示的字符
 %d  表示十进制
 %o  表示八进制
+%O	0o 前缀表示的八进制
 %q  该值对应的单引号括起来的go语法字符字面值，必要时会采用安全的转义表示
 %x  表示为十六进制，使用a-f
 %X  表示为十六进制，使用A-F
@@ -51,11 +55,11 @@ func main() {
 
 //如下示例
 func main() {
-
 	fmt.Printf("%b\n", 26)			//11010
 	fmt.Printf("%c\n", 0x4E2D)		//中
 	fmt.Printf("%d\n", 0x12)		//18
 	fmt.Printf("%o\n", 20)			//24
+	fmt.Printf("%O\n", 20)			//0o24
 	fmt.Printf("%q\n", 0x4E2D)		//'中'
 	fmt.Printf("%x\n", 14)			//e
 	fmt.Printf("%X\n", 14)			//E
@@ -72,16 +76,32 @@ func main() {
 %F	等价于%f
 %g	根据实际情况采用%e或%f格式（以获得更简洁、准确的输出）
 %G	根据实际情况采用%E或%F格式（以获得更简洁、准确的输出）
-//如下示例
-unc main() {
+%x	小写16进制
+%X	大写16进制
 
-	fmt.Printf("%b\n", 10.45)	//5882827013252710p-49
-	fmt.Printf("%e\n", 10.45)	//1.045000E+01
-	fmt.Printf("%E\n", 10.45)	//1.045000E+01
-	fmt.Printf("%f\n", 10.45)	//10.450000
-	fmt.Printf("%F\n", 10.45)	//10.450000
-	fmt.Printf("%g\n", 10.45)	//10.45
-	fmt.Printf("%G\n", 10.45)	//10.45
+Examples:
+		%f     default width, default precision
+		%9f    width 9, default precision
+		%.2f   default width, precision 2
+		%9.2f  width 9, precision 2
+		%9.f   width 9, precision 0
+
+//如下示例
+func main() {
+	fmt.Printf("%b\n", 10.45)		//5882827013252710p-49
+	fmt.Printf("%e\n", 10.45)		//1.045000E+01
+	fmt.Printf("%E\n", 10.45)		//1.045000E+01
+	fmt.Printf("%f\n", 10.451)		//10.451000
+	fmt.Printf("%9f\n", 10.45)		//10.450000
+	fmt.Printf("%9.2f\n", 10.45)	//     10.45
+	fmt.Printf("%9.f\n", 10.45)		//        10
+	fmt.Printf("%.1f\n", 10.45)		//10.4
+	fmt.Printf("%.4f\n", 10.45)		//10.4500
+	fmt.Printf("%F\n", 10.45)		//10.450000
+	fmt.Printf("%g\n", 10.45)		//10.45
+	fmt.Printf("%G\n", 10.45)		//10.45
+	fmt.Printf("%x\n", 10.45)		//0x1.4e66666666666p+03
+	fmt.Printf("%X\n", 10.45)		//0X1.4E66666666666P+03
 }
 
 ```
@@ -99,7 +119,6 @@ package main
 import "fmt"
 
 func main() {
-
 	fmt.Printf("%s\n", []byte("go开发"))		//go开发
 	fmt.Printf("%s\n", "go开发")			//go开发
 	fmt.Printf("%q\n", "go开发")			//"go开发"
@@ -111,13 +130,16 @@ Slice
 ===================================================================
 ```
 %p       切片第一个元素的指针
+
+The %b, %d, %o, %x and %X verbs also work with pointers,
+formatting the value exactly as if it were an integer.
+
 //如下示例
 package main
 
 import "fmt"
 
 func main() {
-
 	fmt.Printf("%p\n", []byte("go开发"))			//0xc42001a0d8
 	fmt.Printf("%p\n", []int{1, 2, 3, 45, 65})	//0xc420020180
 }
