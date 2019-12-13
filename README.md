@@ -40,6 +40,7 @@
 - [docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)
 - [docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
 - [mysql基础]()
+- [mysql 锁]()
 - [mysql基础架构](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84.md)
 - [mysql日志系统](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F.md)
 - [事物隔离](https://github.com/w1991668899/blog/blob/master/mysql/%E4%BA%8B%E7%89%A9%E9%9A%94%E7%A6%BB.md)
