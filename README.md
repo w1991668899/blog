@@ -20,7 +20,7 @@
 - [go Reflect、Interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
 - [go channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
 - [go 位运算](https://github.com/w1991668899/blog/blob/master/go/%E4%BD%8D%E8%BF%90%E7%AE%97.md)
-- [go 全部操作符]()
+- [go 全部操作符](https://github.com/w1991668899/blog/blob/master/go/%E5%85%A8%E9%83%A8%E6%93%8D%E4%BD%9C%E7%AC%A6.md)
 - [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
 - [go 标准库 io 包源码解析 `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
 - [go 标准库 net 包源码解析 `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
