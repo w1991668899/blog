@@ -20,6 +20,7 @@
 - [go Reflect、Interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
 - [go channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
 - [go 位运算](https://github.com/w1991668899/blog/blob/master/go/%E4%BD%8D%E8%BF%90%E7%AE%97.md)
+- [go 全部操作符]()
 - [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
 - [go 标准库 io 包源码解析 `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
 - [go 标准库 net 包源码解析 `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
@@ -55,6 +56,12 @@
 - [mysql 日志系统](https://github.com/w1991668899/blog/blob/master/mysql/mysql%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F.md)
 - [mysql 最大连接数相关]()
 - [mysql 关于连表]()
+
+
+**go lib share**
+- [go代码质量检测 revive](https://github.com/mgechev/revive)
+
+
 
 
 
