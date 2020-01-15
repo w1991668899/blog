@@ -5,6 +5,7 @@
 #  <p align='center'> Blog </p>
 
 - [etcd]()
+- [go与rust类型系统]()
 - [分布式压测系统构建](https://github.com/w1991668899/blog/blob/master/monitoring/jmeter.md)
 - [监控系统构建](https://github.com/w1991668899/blog/blob/master/monitoring/monitoring.md)
 - [Delve go专用调试工具](https://github.com/w1991668899/blog/blob/master/go/delve.md)
