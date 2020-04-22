@@ -29,6 +29,11 @@
 
 ### 搜索算法
 
+###动态规划
+
+###计算机科学中的数学
+
+
 
 
 ## linux
@@ -44,8 +49,10 @@
 - [linux 信号](https://github.com/w1991668899/blog/blob/master/linux/%E4%BF%A1%E5%8F%B7.md)
 - [linux perf 性能分析]()
 
+### 管道
 
-## go
+
+## golang
 - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [go for range 与 for 循环]()
 - [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
@@ -59,15 +66,16 @@
 - [go defer 分析](https://github.com/w1991668899/blog/blob/master/go/defer.md)
 - [go 全部操作符](https://github.com/w1991668899/blog/blob/master/go/%E5%85%A8%E9%83%A8%E6%93%8D%E4%BD%9C%E7%AC%A6.md)
 - [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
-- [go 标准库 io 包 `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
-- [go 标准库 io/ioutil 包]()
-- [go 标准库 bufio 包]()
-- [go 标准库 net 包 `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
-- [go 标准库 net 包 `iprawsock.go` `net.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_iprawsock.md)
-- [go 标准库 net/http 包]()
-- [go 标准库 sort 包]()
-- [go 标准库 fmt 格式化](https://github.com/w1991668899/blog/blob/master/go/fmt.md)
-- [go 标准库 fmt 包]()
+- [go 标准库 io `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
+- [go 标准库 io/ioutil]()
+- [go 标准库 bufio]()
+- [go 标准库 net `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
+- [go 标准库 net`iprawsock.go` `net.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_iprawsock.md)
+- [go 标准库 net/http]()
+- [go 标准库 sort]()
+- [go 标准库 fmt](https://github.com/w1991668899/blog/blob/master/go/fmt.md)
+- [go 标准库 fmt]()
+- [go 标准库 time]()
 - [rust 格式化输出]()
 - [go regex 包]()
 - [rust regex]()
@@ -80,6 +88,11 @@
 - [栈](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/stack.md)
 - [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 
+##rust
+- [基础类型-int]()
+- [基础类型-string]()
+- [宏]()
+- [编译器]()
 
 ## docker
 - [dockerfile]()
