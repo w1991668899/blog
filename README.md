@@ -36,6 +36,10 @@
 
 
 
+## LeetCode 题解
+- [0001-两数之和]()
+
+
 
 ## linux
 
@@ -54,6 +58,7 @@
 
 
 ## golang
+- [go 编译提示 //go:]()
 - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [go for range 与 for 循环]()
 - [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
