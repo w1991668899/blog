@@ -57,6 +57,14 @@
 ### 管道
 
 
+## rust
+
+- [基础类型-num]()
+- [基础类型-string]()
+- [宏]()
+- [编译器]()
+
+
 ## golang
 - [go 编译提示 //go:]()
 - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
@@ -93,12 +101,6 @@
 - [Gin 最佳实践](https://github.com/w1991668899/gin_example/blob/master/README.md)
 - [栈](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/stack.md)
 - [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
-
-##rust
-- [基础类型-num]()
-- [基础类型-string]()
-- [宏]()
-- [编译器]()
 
 ## docker
 - [dockerfile]()
