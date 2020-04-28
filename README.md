@@ -7,17 +7,20 @@
 ## 数据结构与算法
 
 ### 基础
+
 - [数学基础](https://github.com/w1991668899/blog/blob/master/structuresandalgorithms/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.md)
 - [复杂度分析](https://www.jianshu.com/p/444c65ebb416)
 
 
 ### 线性结构
+
 - [单链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/single_link.md)
 - [双链表](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/double_link.md)
 - [反转链表]()
 - [栈]()
 
 ### 排序算法
+
 - [排序-冒泡]()
 - [排序-选择]()
 - [排序-插入]()
@@ -30,13 +33,14 @@
 
 ### 搜索算法
 
-###动态规划
+### 动态规划
 
-###计算机科学中的数学
+### 计算机科学中的数学
 
 
 
 ## LeetCode 题解
+
 - [0001-两数之和](https://github.com/w1991668899/blog/blob/master/leetcode/0001.md)
 
 
@@ -44,11 +48,13 @@
 ## linux
 
 ### 内存
+
 - [内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)
 - [内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)
 - [内存管理-分页机制](https://www.jianshu.com/p/f9e362e64ef9)
 
 ### linux性能分析
+
 - [linux Brendan Gregg](http://www.brendangregg.com/Perf/linux_perf_tools_full.png)
 - [linux 性能优化基本思路](https://github.com/w1991668899/blog/blob/master/linux/linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.md)
 - [linux 信号](https://github.com/w1991668899/blog/blob/master/linux/%E4%BF%A1%E5%8F%B7.md)
@@ -66,6 +72,7 @@
 
 
 ## golang
+
 - [go 编译提示 //go:]()
 - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [go for range 与 for 循环]()
@@ -103,12 +110,14 @@
 - [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 
 ## docker
+
 - [dockerfile]()
 - [makefile]()
 - [docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)
 - [docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
 
 ## mysql
+
 - [mysql基础]()
 - [mysql 锁]()
 - [mysql 事物](https://github.com/w1991668899/blog/blob/master/mysql/%E4%BA%8B%E7%89%A9%E9%9A%94%E7%A6%BB.md)
@@ -119,6 +128,7 @@
 
 
 ## 其他
+
 - [计算机科学中的数学]()
 - [排序算法分析总结]()
 - [etcd 分布式锁]()
@@ -129,6 +139,7 @@
 - [go构建撮合引擎经验]()
 
 **go lib share**
+
 - [go代码质量检测 revive](https://github.com/mgechev/revive)
 
 
@@ -136,6 +147,7 @@
 
 
 **收藏**
+
 - [MySQL高性能优化系列](https://www.cnblogs.com/huchong/tag/MySQL%E9%AB%98%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%B3%BB%E5%88%97/)
 
 
