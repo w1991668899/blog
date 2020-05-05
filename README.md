@@ -49,7 +49,7 @@
 ## LeetCode 题解
 
 - [0001-两数之和](https://github.com/w1991668899/blog/blob/master/leetcode/0001.md)
-- [0001-相同的树](https://github.com/w1991668899/blog/blob/master/leetcode/0100.md)
+- [0100-相同的树](https://github.com/w1991668899/blog/blob/master/leetcode/0100.md)
 
 
 
