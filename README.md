@@ -2,7 +2,7 @@
 <img src='https://github.com/w1991668899/blog/blob/master/image/index.jpeg'>
 </p>
 
-#  <p align='center'> Blog </p>
+# <p align='center'> 春江水暖 </p>
 
 ## 数据结构与算法
 
@@ -10,7 +10,6 @@
 
 - [数学基础](https://github.com/w1991668899/blog/blob/master/structuresandalgorithms/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80.md)
 - [复杂度分析](https://www.jianshu.com/p/444c65ebb416)
-
 
 ### 线性结构
 
@@ -52,11 +51,9 @@
 - [0100-相同的树](https://github.com/w1991668899/blog/blob/master/leetcode/0100.md)
 
 
-
-
 ## linux
 
-### 内存
+### linux内存管理
 
 - [内存管理-程序是如何运行的](https://www.jianshu.com/p/f42ad2f9af73)
 - [内存管理-内存对齐](https://www.jianshu.com/p/be89357ab475)
@@ -69,11 +66,14 @@
 - [linux 信号](https://github.com/w1991668899/blog/blob/master/linux/%E4%BF%A1%E5%8F%B7.md)
 - [linux perf 性能分析]()
 
-### 管道
-
 
 ## rust
 
+- 类型系统
+- 编译器
+- 宏系统
+
+- [错误处理]()
 - [基础类型-num]()
 - [基础类型-string]()
 - [宏]()
@@ -82,37 +82,53 @@
 - [占位符]()
 
 
-## golang
+## Golang
 
-- [go 编译提示 //go:]()
-- [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
-- [go for range 与 for 循环]()
-- [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
-- [go 内存管理]()
-- [go GC]()
-- [go 类型系统 slice、array、string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
-- [go 类型系统 map](https://github.com/w1991668899/blog/blob/master/go/map.md)
-- [go 类型系统 channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
-- [go 类型系统位运算](https://github.com/w1991668899/blog/blob/master/go/%E4%BD%8D%E8%BF%90%E7%AE%97.md)
-- [go 类型系统 reflect、interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
+- 编译器
+    - [go 条件编译 //go:]()
+    
+- 内存管理
+    - [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
+    - [go 内存管理]()
+    - [go GC]()
+
+- 类型系统
+    - [底层类型 runtime _type]()
+    - [go 类型系统 slice、array、string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
+    - [go slice]()
+    - [go 类型系统 map](https://github.com/w1991668899/blog/blob/master/go/map.md)
+    - [go 类型系统 channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
+    - [go 类型系统位运算](https://github.com/w1991668899/blog/blob/master/go/%E4%BD%8D%E8%BF%90%E7%AE%97.md)
+    - [go 类型系统 reflect、interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
+
+- 标准库
+    - 并发原语
+    - IO设计
+    - 系统交互
+    - 网络服务
+    - Hash  
+    - [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
+    - [go 标准库 io `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
+    - [go 标准库 io/ioutil]()
+    - [go 标准库 bufio]()
+    - [go 标准库 net `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
+    - [go 标准库 net`iprawsock.go` `net.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_iprawsock.md)
+    - [go 标准库 net/http]()
+    - [go 标准库 sort]()
+    - [go 标准库 fmt](https://github.com/w1991668899/blog/blob/master/go/fmt.md)
+    - [go 标准库 fmt]()
+    - [go 标准库 time]()
+    - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
+    - [go for range 与 for 循环]()
+      
+- Unsafe
+    - [go unsafe]()  
+    
+- 性能分析
+    - [go pprof性能分析]()
+
 - [go defer 分析](https://github.com/w1991668899/blog/blob/master/go/defer.md)
 - [go 全部操作符](https://github.com/w1991668899/blog/blob/master/go/%E5%85%A8%E9%83%A8%E6%93%8D%E4%BD%9C%E7%AC%A6.md)
-- [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
-- [go 标准库 io `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
-- [go 标准库 io/ioutil]()
-- [go 标准库 bufio]()
-- [go 标准库 net `ip.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_ip.md)
-- [go 标准库 net`iprawsock.go` `net.go` 文件](https://github.com/w1991668899/blog/blob/master/go/net/net_iprawsock.md)
-- [go 标准库 net/http]()
-- [go 标准库 sort]()
-- [go 标准库 fmt](https://github.com/w1991668899/blog/blob/master/go/fmt.md)
-- [go 标准库 fmt]()
-- [go 标准库 time]()
-- [rust 格式化输出]()
-- [go regex 包]()
-- [rust regex]()
-- [go unsafe]()
-- [go pprof性能分析]()
 - [go 断行规则]()
 - [go-micro 微服务框架实践](https://github.com/w1991668899/go-micro)
 - [delve go专用调试工具](https://github.com/w1991668899/blog/blob/master/go/delve.md)
@@ -120,12 +136,15 @@
 - [栈](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/stack.md)
 - [排序 一](https://github.com/w1991668899/blog/blob/master/go/structures_algorithms/%E6%8E%92%E5%BA%8F%20%E4%B8%80.md)
 
-## docker
+[comment]: <> (## docker)
 
-- [dockerfile]()
-- [makefile]()
-- [docker运行mysql8.0.13实践](https://www.jianshu.com/p/49f7e46cf4c6)
-- [docker运行redis5.0实践](https://www.jianshu.com/p/cb3f94b263da)
+[comment]: <> (- [dockerfile]&#40;&#41;)
+
+[comment]: <> (- [makefile]&#40;&#41;)
+
+[comment]: <> (- [docker运行mysql8.0.13实践]&#40;https://www.jianshu.com/p/49f7e46cf4c6&#41;)
+
+[comment]: <> (- [docker运行redis5.0实践]&#40;https://www.jianshu.com/p/cb3f94b263da&#41;)
 
 ## mysql
 
