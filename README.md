@@ -90,6 +90,7 @@
 - [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
 - [go 内存管理]()
 - [go GC]()
+- [panic]()
 - [go 类型系统 slice、array、string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
 - [go 类型系统 map](https://github.com/w1991668899/blog/blob/master/go/map.md)
 - [go 类型系统 channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
