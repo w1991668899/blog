@@ -42,6 +42,10 @@
 
 ### 动态规划
 
+### 位运算
+
+- [算法中一些位运算技巧]()
+
 ### 计算机科学中的数学
 
 
@@ -88,9 +92,20 @@
 - [unicode 字符集 ASCII编码 utf-8编码](https://github.com/w1991668899/blog/blob/master/go/unicode.md)
 - [go for range 与 for 循环]()
 - [go 内存对齐-结构体](https://www.jianshu.com/p/a0c5315400a7)
-- [go 内存管理]()
-- [go GC]()
+
+### 内存管理
+  - 内存管理
+  - GC
+    
+### 运行时
+  - 关于g0
+
+### 性能分析优化
+ - pprof
+    
+### 类型系统
 - [panic]()
+- [iota]()
 - [go 类型系统 slice、array、string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
 - [go 类型系统 map](https://github.com/w1991668899/blog/blob/master/go/map.md)
 - [go 类型系统 channel](https://github.com/w1991668899/blog/blob/master/go/concurrent/channel.md)
@@ -98,6 +113,9 @@
 - [go 类型系统 reflect、interface](https://github.com/w1991668899/blog/blob/master/go/reflect_interface.md)
 - [go defer 分析](https://github.com/w1991668899/blog/blob/master/go/defer.md)
 - [go 全部操作符](https://github.com/w1991668899/blog/blob/master/go/%E5%85%A8%E9%83%A8%E6%93%8D%E4%BD%9C%E7%AC%A6.md)
+  
+### 标准库
+
 - [go 标准库 context](https://github.com/w1991668899/blog/blob/master/go/context.md)
 - [go 标准库 io `io.go` 文件](https://github.com/w1991668899/blog/blob/master/go/io/io.md)
 - [go 标准库 io/ioutil]()
@@ -109,6 +127,7 @@
 - [go 标准库 fmt](https://github.com/w1991668899/blog/blob/master/go/fmt.md)
 - [go 标准库 fmt]()
 - [go 标准库 time]()
+- [go 标准库 math]()
 - [rust 格式化输出]()
 - [go regex 包]()
 - [rust regex]()
