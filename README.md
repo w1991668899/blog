@@ -104,6 +104,7 @@
  - pprof
     
 ### 类型系统
+- [浮点类型的存储]()
 - [panic]()
 - [iota]()
 - [go 类型系统 slice、array、string](https://github.com/w1991668899/blog/blob/master/go/%E5%88%87%E7%89%87%E4%B8%8E%E6%95%B0%E7%BB%84.md)
